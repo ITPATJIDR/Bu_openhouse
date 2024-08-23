@@ -1,3 +1,15 @@
+Prerequisite: 
+
+```python
+pip install flask  
+pip install flask_sqlalchemy
+pip install werkzeug
+```
+
+```python
+git clone https://github.com/ITPATJIDR/Bu_openhouse.git
+```
+
 รายละเอียดของโค้ด:
 
 การตั้งค่า Flask และฐานข้อมูล:
