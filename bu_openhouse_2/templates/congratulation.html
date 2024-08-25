@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
     <title>Congratulation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  </head>
 
-<body>
-    <div class="flex flex-col justify-center items-center gap-5 bg-white p-8 px-20 rounded-lg transition-all">
-        <h2 class="font-bold text-[20px] animate-bounce">Congratulations!</h2>
-        <!-- gif here -->
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2o2aW02N3JpdTR2N3Nxb211M2pkcXU5cHJuYndwNnV2Nms0b29jbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BPJmthQ3YRwD6QqcVD/giphy.gif"
-            alt="gif" class="py-4">
-        <p class="font-normal text-[16px]">{{ firstname }} {{ lastname }}, you have successfully logged in!</p>
-    </div>
-</body>
-
+  <body>
+    {{ firstname }} {{ lastname }}, you have successfully logged in!
+  </body>
 </html>
