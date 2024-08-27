@@ -3,20 +3,21 @@
 Tailwind CSS Documentation : https://tailwindcss.com/docs/installation
 <br>Giphy : https://giphy.com/
 
-
 ### 1. Register Button and Login Button
 
 - <strong>Objective</strong> : สไตล์ปุ่มสำหรับการลงทะเบียนหรือเข้าสู่ระบบ
 - <strong>Details</strong> : เราจะใช้ปุ่มที่มีชุดคลาส Tailwind CSS เฉพาะเพื่อให้ได้ดีไซน์ที่ทันสมัยและตอบสนองได้ดี ปุ่มจะมีพื้นหลังสีเข้ม (bg-slate-600), เปลี่ยนสีเมื่อเลื่อนเมาส์ไปที่ปุ่ม (hover
-) และจะมีเอฟเฟกต์การขยายขนาดที่ราบรื่นเมื่อถูกเลือก (focus
-) ซึ่งจะช่วยเพิ่มความสวยงามและประสบการณ์การใช้งานที่ดีขึ้นแก่ผู้ใช้
+  ) และจะมีเอฟเฟกต์การขยายขนาดที่ราบรื่นเมื่อถูกเลือก (focus
+  ) ซึ่งจะช่วยเพิ่มความสวยงามและประสบการณ์การใช้งานที่ดีขึ้นแก่ผู้ใช้
 
 - bg-[#000000]
 
 Implementation:
+
 ```HTML
 <button type="submit" class="w-full p-3 rounded-lg my-8 bg-slate-600 hover:bg-slate-700 text-white focus:scale-95 transition-all">Button</button>
 ```
+
 &nbsp;
 
 ### 2. Border Radius and border color
@@ -25,11 +26,11 @@ Implementation:
 
 - <strong>Details</strong> : เราจะออกแบบคอนเทนเนอร์ด้วย Tailwind CSS ที่มีขอบโค้งมนและสีขอบเฉพาะ เพื่อให้คอนเทนเนอร์มีโครงสร้างที่ชัดเจนและน่าดึงดูด
 
-
 - <img src="img/Screenshot 2024-08-25 214721.png"
             alt="img">
 
 Implementation:
+
 ```HTML
 class="p-10 rounded-xl border-2 border-blue-500"
 ```
@@ -44,8 +45,8 @@ class="p-10 rounded-xl border-2 border-blue-500"
 - <img src="img/Screenshot 2024-08-25 220939.png"
             alt="img">
 
-
 Implementation:
+
 ```HTML
 <div id="confirmation-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
         <div class="bg-white p-6 rounded-lg text-center">
@@ -87,6 +88,7 @@ Implementation:
             alt="img">
 
 Implementation:
+
 ```HTML
 <div
       class="flex flex-col justify-center items-center gap-5 bg-white p-8 px-20 rounded-lg transition-all"
@@ -101,5 +103,54 @@ Implementation:
         <p class="font-normal text-[16px]">
           {{ firstname }} {{ lastname }}, you have successfully logged in!
         </p>
-    </div>
+  </div>
+```
+
+### 5. (optional) Let's add animation
+
+Implementation:
+
+```js
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".animate-class");
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
+```
+
+```CSS
+.animate-class {
+    opacity: 0;
+    scale: 0.9;
+    transition: all 0.5s ease;
+    transition-delay: 200ms;
+    transform: translateY(50px);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+  }
+
+  .show {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+
+  .text1:nth-child(1) {
+    transition-delay: 200ms;
+  }
+  .text1:nth-child(2) {
+    transition-delay: 300ms;
+  }
+  .text1:nth-child(3) {
+    transition-delay: 400ms;
+  }
 ```
